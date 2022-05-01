@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Node js upload/Import excel file to MySQL database Pharmazi</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      <h1>Node js upload Excel file to MySQL database - Pharmazi</h1>
+      <form action="/uploadfile" enctype="multipart/form-data" method="post">
+        <input type="file" (change)="handleUpload($event)" name="uploadfile" accept='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel' >
+        <input type="submit" value="Upload Excel">
+      </form>  
+    </body>
+</html> -->
+<!-- ///////////////////////////////////////////////// -->
+
+<!-- <h3>Upload File</h3>
+
+<form [formGroup]="fileUploadForm" (ngSubmit)="onFormSubmit()">
+    <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <h6 class="head-title margin-top-8"><span>UPLOAD</span></h6>
+            </div>
+        </div>
+
+        <div class="col-sm-6 text-center">
+
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="myfile"
+                    (change)="onFileSelect($event)" #UploadFileInput>
+                <label class="custom-file-label" for="customFile">{{fileInputLabel || 'Choose File'}}</label>
+            </div>
+
+        </div>
+        <div class="col-sm-6 text-center">
+            <button class="btn btn-primary" type="submit">Upload</button>
+        </div>
+    </div>
+</form> -->
+
+
+<h1>Angular 13 File Upload Tutorial Example - Tutsmake.com</h1>
+          
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+     
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input
+            formControlName="name"
+            id="name"
+            type="text"
+            class="form-control">
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+            <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+ 
+  
+            <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
+        </div>
+    </div>
+         
+    <div class="form-group">
+        <label for="file">File</label>
+        <input
+            formControlName="file"
+            id="file"
+            type="file"
+            class="form-control"
+            (change)="onFileChange($event)">
+        <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+            <div *ngIf="f['file'].errors && f['file'].errors['required']">File is required.</div>
+        </div>
+    </div>
+             
+    <button class="btn btn-primary" [disabled]="myForm.invalid" type="submit">Submit</button>
+</form>
